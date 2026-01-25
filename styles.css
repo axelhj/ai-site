@@ -33,15 +33,20 @@
    -------------------------------------------------------------------------- */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
+html {
+  background: var(--bg-dark); /* Base dark background on html */
+}
+
 body {
   font-family: 'Segoe UI', system-ui, sans-serif;
-  background: var(--bg-dark);
+  background: transparent;
   color: var(--text);
   min-height: 100vh;
   overflow-x: hidden;
+  position: relative;
 }
 
-/* Fixed animated grid - covers entire viewport, sits behind content */
+/* Fixed animated grid - covers entire viewport */
 body::before {
   content: "";
   position: fixed;
@@ -52,7 +57,7 @@ body::before {
   background-size: var(--grid-size) var(--grid-size);
   animation: slideGrid 2s linear infinite;
   pointer-events: none;
-  z-index: -1;
+  z-index: 1;
 }
 
 @keyframes slideGrid {
@@ -62,7 +67,7 @@ body::before {
 /* --------------------------------------------------------------------------
    3. Layout
    -------------------------------------------------------------------------- */
-.main-content { position: relative; }
+.main-content { position: relative; z-index: 2; }
 
 .container {
   max-width: 1240px;
@@ -305,7 +310,7 @@ header.hero {
   text-align: center;
   position: relative;
   padding-top: 60px;
-  background: rgba(var(--bg-dark-rgb), 0.88);
+  background: rgba(var(--bg-dark-rgb), 0.7);
 }
 
 .hero-content {
