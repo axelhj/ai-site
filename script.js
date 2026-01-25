@@ -5,7 +5,7 @@
     'Find voice AI agents for your business',
     'Discover hyper-personalized outreach tools',
     'Explore knowledge & process AI systems',
-    'Get started with VortexAI today'
+    'Get started with Phimes today'
   ];
   
   let textIndex = 0;
