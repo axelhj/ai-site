@@ -3,47 +3,103 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Phimes • Framtidens automation börjar här</title>
+  <title>Om oss • Phimes</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <div class="main-content">
-  <header class="hero">
-    <div class="hero-content">
-      <div class="hero-left">
-        <h1>Phimes<span style="opacity:0.8">AI</span></h1>
-        <p class="lead">Vilka vi är</p>
-        <img class="ceo-img" src="image/ceo.jpg"" />
+  <nav class="top-bar">
+    <div class="top-bar-content">
+      <a href="index.html" class="top-bar-logo">
+        <div class="logo-icon">P</div>
+        <span>Phimes</span>
+      </a>
+      <div class="top-bar-nav">
+        <a href="index.html#voice-ai">Tjänster</a>
+        <div class="nav-dropdown">
+          <a href="index.html#pricing">Priser</a>
+          <div class="dropdown-content">
+            <a href="index.html#pricing" class="dropdown-item">
+              <div class="dropdown-item-title">
+                <span class="dropdown-item-name">Start</span>
+                <span class="dropdown-item-price">€2 000</span>
+              </div>
+              <div class="dropdown-item-desc">1 AI-agent, 2 veckors implementation</div>
+            </a>
+            <a href="index.html#pricing" class="dropdown-item">
+              <div class="dropdown-item-title">
+                <span class="dropdown-item-name">Tillväxt</span>
+                <span class="dropdown-item-price">€5 000</span>
+              </div>
+              <div class="dropdown-item-desc">3 AI-agenter, 90 dagars support</div>
+            </a>
+            <a href="index.html#pricing" class="dropdown-item">
+              <div class="dropdown-item-title">
+                <span class="dropdown-item-name">Enterprise</span>
+                <span class="dropdown-item-price">€10 000</span>
+              </div>
+              <div class="dropdown-item-desc">Obegränsat, dedikerat team</div>
+            </a>
+          </div>
+        </div>
+        <a href="index.html#contact">Kontakt</a>
       </div>
-      <div class="hero-right">
-        <div class="website-preview">
-          <div class="preview-content" id="typing-container"></div>
+    </div>
+  </nav>
+
+  <div class="main-content">
+    <header class="hero">
+      <div class="hero-content">
+        <div class="hero-left">
+          <h1>Om oss</h1>
+          <p class="lead">Vi är ett team som brinner för att göra AI tillgängligt för svenska företag.</p>
+        </div>
+        <div class="hero-right">
+          <img class="ceo-img" src="image/ceo.jpg" alt="Grundare" style="width: 280px; border-radius: 20px; box-shadow: 0 8px 32px rgba(0,0,0,0.4);" />
         </div>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <footer class="cta">
-    <div class="container">
-      <h2 style="margin-bottom:2rem;">Redo att accelerera?</h2>
-      <p style="font-size:1.5rem; max-width:760px; margin:0 auto 3rem; color:var(--text-muted);">
-        20 minuter. Inga åtaganden. Vi tittar på era siffror och säger rakt ut om vi kan göra skillnad.
-      </p>
-      <a href="#" class="btn">Starta samtalet nu</a>
-    </div>
-  </footer>
+    <section>
+      <div class="container">
+        <h2 class="section-title-sm">Vår historia</h2>
+        <div class="services-grid">
+          <div class="service-card">
+            <h3>Bakgrund</h3>
+            <p>Phimes grundades med en enkel vision: att hjälpa företag automatisera repetitiva uppgifter och frigöra tid för det som verkligen skapar värde.</p>
+          </div>
+          <div class="service-card">
+            <h3>Vårt fokus</h3>
+            <p>Vi specialiserar oss på röst-AI, processautomation och skräddarsydda SaaS-lösningar för den svenska marknaden.</p>
+          </div>
+          <div class="service-card">
+            <h3>Vårt löfte</h3>
+            <p>Mätbara resultat, inte tomma löften. Vi säger ärligt om vi kan hjälpa – och levererar bara det vi kan stå för.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="cta" id="contact">
+      <div class="container">
+        <h2 style="margin-bottom:2rem;">Vill du veta mer?</h2>
+        <p style="font-size:1.5rem; max-width:760px; margin:0 auto 3rem; color:var(--text-muted);">
+          Boka ett samtal så berättar vi mer om hur vi kan hjälpa just ert företag.
+        </p>
+        <a href="index.html#contact" class="btn">Boka ett samtal</a>
+      </div>
+    </footer>
   </div>
 
   <footer class="main-footer">
     <div class="footer-content">
-      <a href="#" class="footer-logo">
-        <object type="image/svg+xml" data="svg/footer-logo.svg" class="footer-svg"></object>
+      <a href="index.html" class="footer-logo">
+        <div class="footer-icon">P</div>
         <span>Phimes</span>
       </a>
       <div class="footer-links">
         <a href="#" class="footer-link">Support</a>
-        <a href="#" class="footer-link">Kontakt</a>
+        <a href="index.html#contact" class="footer-link">Kontakt</a>
         <a href="#" class="footer-link">Integritetspolicy</a>
       </div>
     </div>
