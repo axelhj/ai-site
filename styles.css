@@ -230,21 +230,50 @@ h1 {
 }
 
 section {
-  padding: clamp(100px, 12vw, 160px) 0;
+  padding: clamp(80px, 10vw, 120px) 0;
   position: relative;
   overflow: hidden;
 }
 
-/* Grid background - using ::after to avoid conflict with ::before on hero */
-section::after,
+/* Alternate section backgrounds */
+section.section-dark {
+  background: var(--bg-darker);
+}
+
+section.section-gradient {
+  background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-darker) 100%);
+}
+
+/* Section dividers */
+section.section-dark::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(72, 158, 199, 0.3), transparent);
+}
+
+section.section-dark::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(72, 158, 199, 0.3), transparent);
+}
+
+/* Grid background - only on hero and CTA */
 header.hero::after,
 footer.cta::after {
   content: "";
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(100, 100, 100, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(100, 100, 100, 0.1) 1px, transparent 1px);
+    linear-gradient(rgba(100, 100, 100, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(100, 100, 100, 0.08) 1px, transparent 1px);
   background-size: 40px 40px;
   background-position: 0 0;
   animation: slideGrid 1s linear infinite;
@@ -272,6 +301,24 @@ h2 {
   font-weight: 900;
   position: relative;
   z-index: 1;
+}
+
+/* Smaller section headers */
+h2.section-title-sm {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin-bottom: 3rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  background: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+}
+
+h3.card-title {
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+  color: var(--text);
+  font-weight: 700;
 }
 
 .cards {
@@ -404,10 +451,11 @@ h2 {
 }
 
 footer.cta {
-  background: linear-gradient(to bottom, var(--purple), var(--bg-darker));
-  padding: clamp(140px, 15vw, 220px) 5vw;
+  padding: clamp(100px, 12vw, 160px) 5vw;
   text-align: center;
-  border-top: 1px solid rgba(72, 158, 199, 0.2);
+  background: linear-gradient(180deg, var(--bg-darker) 0%, var(--purple) 50%, var(--bg-darker) 100%);
+  position: relative;
+  overflow: hidden;
 }
 
 footer.main-footer {
@@ -567,4 +615,139 @@ footer.main-footer {
 .ceo-img {
   width: 160px;
   border-radius: 150px;
+}
+
+/* Pricing section */
+.pricing-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.pricing-card {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  backdrop-filter: blur(16px);
+  transition: all 0.4s cubic-bezier(0.23,1,0.32,1);
+  position: relative;
+  z-index: 1;
+}
+
+.pricing-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(72, 158, 199, 0.4);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+}
+
+.pricing-card.featured {
+  border-color: var(--accent);
+  box-shadow: 0 0 30px rgba(72, 158, 199, 0.2);
+}
+
+.pricing-card.featured::before {
+  content: "Populärast";
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, var(--accent), var(--purple));
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.pricing-tier {
+  font-size: 1.1rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.pricing-price {
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--text);
+  margin-bottom: 0.25rem;
+}
+
+.pricing-price span {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+.pricing-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+.pricing-features {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.pricing-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.pricing-features li svg {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+}
+
+/* Services section compact cards */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.service-card {
+  background: rgba(49, 24, 67, 0.25);
+  border: 1px solid rgba(72, 158, 199, 0.15);
+  border-radius: 16px;
+  padding: 1.75rem;
+  transition: all 0.3s ease;
+}
+
+.service-card:hover {
+  border-color: rgba(72, 158, 199, 0.3);
+  background: rgba(49, 24, 67, 0.35);
+}
+
+.service-card h3 {
+  font-size: 1.25rem;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0;
 }
